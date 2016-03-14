@@ -4,7 +4,7 @@
 	'summary': """Control de clientes del laboratorio""",
 	'description': """
 		Este módulo le permite administrar:
-			Información relacionada con clientes
+			--Información relacionada con clientes
 	""",
 	'author': "Andrés López, Mauricio Rodríguez & Carlos Solis",
 	'website': "http://www.andmaca.blogspot.com",
