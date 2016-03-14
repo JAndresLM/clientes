@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-	'name': "Gestión de Clientes",
+	'name': "Gestión de Clientes para el laboratorio",
 	'summary': """Control de clientes del laboratorio""",
 	'description': """
 		Este módulo le permite administrar:
