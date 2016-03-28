@@ -13,6 +13,7 @@
 	'depends': ['base'],
 	'data': [
 		'views/clientes.xml',
+		'views/lugares.xml',
 	],
 	'demo': [
 		'demo.xml',

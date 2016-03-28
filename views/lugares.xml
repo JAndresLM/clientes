@@ -1,0 +1,114 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="provincia_form_view">
+			<field name="name">provincia.form</field>
+			<field name="model">clientes.provincia</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para Provincias">
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="canton_form_view">
+			<field name="name">canton.form</field>
+			<field name="model">clientes.canton</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para Cantones">
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="id_provincia"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="distrito_form_view">
+			<field name="name">distrito.form</field>
+			<field name="model">clientes.distrito</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para Distritos">
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="id_canton"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="provincia_tree_view">
+			<field name="name">provincia.tree</field>
+			<field name="model">clientes.provincia</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de Provincias">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="canton_tree_view">
+			<field name="name">canton.tree</field>
+			<field name="model">clientes.canton</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de Cantones">
+					<field name="name"/>
+					<field name="id_provincia"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="distrito_tree_view">
+			<field name="name">distrito.tree</field>
+			<field name="model">clientes.distrito</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de Distritos">
+					<field name="name"/>
+					<field name="id_canton"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="provincia_list_action">
+			<field name="name">Lista De Provincias</field>
+			<field name="res_model">clientes.provincia</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar la primera provincia</p>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="canton_list_action">
+			<field name="name">Lista De Cantones</field>
+			<field name="res_model">clientes.canton</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar el primer canton</p>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="distrito_list_action">
+			<field name="name">Lista De Distritos</field>
+			<field name="res_model">clientes.distrito</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar el primer distrito</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_clientes_lugares" parent="clientes_menu_principal" name="LUGARES"/>
+		<menuitem id="submenu_provincias" name="Provincias" parent="submenu_clientes_lugares" action="provincia_list_action"/>
+		<menuitem id="submenu_cantones" name="Cantones" parent="submenu_clientes_lugares" action="canton_list_action"/>
+		<menuitem id="submenu_distritos" name="Distritos" parent="submenu_clientes_lugares" action="distrito_list_action"/>
+	</data>
+</openerp>
