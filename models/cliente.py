@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+
 from openerp import models, fields, api
+
 class Cliente(models.Model):
 	_name = 'clientes.cliente'
 	name = fields.Char(string="Nombre Completo", required=True)
