@@ -8,6 +8,7 @@
 					<sheet>
 						<group>
 							<field name="name"/>
+							<field name="canton_id"/>
 						</group>
 					</sheet>
 				</form>
@@ -22,7 +23,7 @@
 					<sheet>
 						<group>
 							<field name="name"/>
-							<field name="id_provincia"/>
+							<field name="provincia_id"/>
 						</group>
 					</sheet>
 				</form>
@@ -37,7 +38,7 @@
 					<sheet>
 						<group>
 							<field name="name"/>
-							<field name="id_canton"/>
+							<field name="canton_id"/>
 						</group>
 					</sheet>
 				</form>
@@ -50,6 +51,7 @@
 			<field name="arch" type="xml">
 				<tree string="Lista de Provincias">
 					<field name="name"/>
+                    <field name="canton_id"/>
 				</tree>
 			</field>
 		</record>
@@ -60,7 +62,7 @@
 			<field name="arch" type="xml">
 				<tree string="Lista de Cantones">
 					<field name="name"/>
-					<field name="id_provincia"/>
+					<field name="provincia_id"/>
 				</tree>
 			</field>
 		</record>
@@ -71,7 +73,7 @@
 			<field name="arch" type="xml">
 				<tree string="Lista de Distritos">
 					<field name="name"/>
-					<field name="id_canton"/>
+					<field name="canton_id"/>
 				</tree>
 			</field>
 		</record>
