@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class Cliente(models.Model):
@@ -19,3 +19,23 @@ class Cliente(models.Model):
     distrito = fields.Many2one('clientes.distrito', ondelete='cascade',
                                string="Distrito")
     otrassenas = fields.Text(string="Otras Señas")
+
+    @api.onchange('provincia')
+    def _get_canton(self):
+        self.canton = self.env['clientes.canton']
+        vals = {}
+        if self.provincia:
+            vals['domain'] = {
+                'canton': [('provincia_id', 'in', self.provincia._ids)]
+            }
+        return vals
+
+    @api.onchange('canton')
+    def _get_distrito(self):
+        self.distrito = self.env['clientes.distrito']
+        vals = {}
+        if self.canton:
+            vals['domain'] = {
+                'distrito': [('canton_id', 'in', self.canton._ids)]
+            }
+        return vals
