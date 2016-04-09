@@ -47,6 +47,6 @@ Credits
 Contributors
 ------------
 
-* Firstname Lastname <email.address@example.org>
+* Andrés López <josandlopmol@hotmail.com>
 * Lesmed Gutiérrez <lesmedgutierrez@outlook.com>
 
