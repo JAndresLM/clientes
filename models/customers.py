@@ -33,7 +33,7 @@ class Customer(models.Model):
         vals = {}
         if self.canton:
             vals['domain'] = {
-                'distritc': [('canton_id', 'in', self.canton._ids)]
+                'district': [('canton_id', 'in', self.canton._ids)]
             }
         return vals
 
