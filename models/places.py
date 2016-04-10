@@ -7,14 +7,14 @@ from openerp import models, fields
 class Province(models.Model):
     _name = 'customers.province'
     name = fields.Char(string="Provincia", required=True)
-    cantons_ids = fields.One2many('customers.canton', 'province_id')
+    canton_id = fields.One2many('customers.canton', 'province_id')
 
 
 class Canton(models.Model):
     _name = 'customers.canton'
     name = fields.Char(string="Canton", required=True)
     province_id = fields.Many2one('customers.province', ondelete='cascade', string="Provincia", required=True)
-    districts_ids = fields.One2many('customers.district', 'canton_id')
+    district_id = fields.One2many('customers.district', 'canton_id')
 
 
 class District(models.Model):
