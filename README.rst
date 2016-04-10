@@ -2,50 +2,31 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
+
 ==============
 Clientes
 ==============
-
 Este módulo le permite administrar:
-    --Información relacionada con clientes
+    * Información relacionada con clientes
+    	* Nombre completo
+    	* Empresa
+    	* Contacto [teléfonos y correo electrónico]
+    	* dirección exacta
+    	* etc.
 
-Installation
+
+Instalación
 ============
+Para instalar este módulo, solo se tiene que presionar el botón INSTALAR
 
-To install this module, you need to:
 
-* do this ...
-
-Configuration
+Configuración
 =============
-
-To configure this module, you need to:
-
-* go to ...
-
-Usage
-=====
-
-To use this module, you need to:
-
-* go to ...
-
-Known issues / Roadmap
-======================
-
-* ...
-
-Bug Tracker
-===========
-
-Bugs are tracked on ...
+Este módulo no requiere de ninguna configuración
 
 
-Credits
-=======
-
-Contributors
-------------
+Contribuidores
+===============
 
 * Andrés López <josandlopmol@hotmail.com>
 * Lesmed Gutiérrez <lesmedgutierrez@outlook.com>

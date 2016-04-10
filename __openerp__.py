@@ -10,8 +10,8 @@
     'version': '8.0.1',
     'depends': ['base'],
     'data': [
-        'views/clientes.xml',
-        'views/lugares.xml',
+        'views/customers.xml',
+        'views/places.xml',
     ],
     'demo': [
         'demo.xml',

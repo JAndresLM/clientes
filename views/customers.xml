@@ -1,0 +1,60 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="customer_form_view">
+			<field name="name">customerform</field>
+			<field name="model">customers.customer</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para Clientes">
+					<sheet>
+						<group>
+							<group string="Información">
+								<field name="name"/>
+								<field name="company"/>
+								<field name="active"/>
+								<field name="email"/>
+								<field name="phone_ids">
+									<tree string="Teléfonos" editable="bottom">
+										<field name="name"/>
+									</tree>
+								</field>
+							</group>
+							<group string="Ubicación">
+								<field name="province"/>
+								<field name="canton"/>
+								<field name="district"/>
+								<field name="address"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- clientes tree/list view -->
+		<record model="ir.ui.view" id="customers_tree_view">
+			<field name="name">customers.tree</field>
+			<field name="model">customers.customer</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de Clientes">
+					<field name="name"/>
+					<field name="phone_ids"/>
+					<field name="email"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="customers_list_action">
+			<field name="name">Lista De Clientes</field>
+			<field name="res_model">customers.customer</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Crear el primer cliente</p>
+			</field>
+		</record>
+
+		<menuitem id="customers_main_menu" name="GESTIÓN DEL CLIENTES"/>
+		<menuitem id="submenu_customers_general" parent="customers_main_menu" name="GENERAL"/>
+		<menuitem id="submenu_customers" name="Clientes" parent="submenu_customers_general" action="customers_list_action"/>
+	</data>
+</openerp>

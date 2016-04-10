@@ -1,14 +1,14 @@
 <openerp>
 	<data>
-		<record model="ir.ui.view" id="provincia_form_view">
-			<field name="name">provincia.form</field>
-			<field name="model">clientes.provincia</field>
+		<record model="ir.ui.view" id="province_form_view">
+			<field name="name">province.form</field>
+			<field name="model">customers.province</field>
 			<field name="arch" type="xml">
 				<form string="Formulario para Provincias">
 					<sheet>
 						<group>
 							<field name="name"/>
-							<field name="canton_id"/>
+							<field name="cantons_ids"/>
 						</group>
 					</sheet>
 				</form>
@@ -17,22 +17,23 @@
 
 		<record model="ir.ui.view" id="canton_form_view">
 			<field name="name">canton.form</field>
-			<field name="model">clientes.canton</field>
+			<field name="model">customers.canton</field>
 			<field name="arch" type="xml">
 				<form string="Formulario para Cantones">
 					<sheet>
 						<group>
 							<field name="name"/>
-							<field name="provincia_id"/>
+							<field name="province_id"/>
+							<field name="districts_ids"/>
 						</group>
 					</sheet>
 				</form>
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="distrito_form_view">
-			<field name="name">distrito.form</field>
-			<field name="model">clientes.distrito</field>
+		<record model="ir.ui.view" id="district_form_view">
+			<field name="name">district.form</field>
+			<field name="model">customers.district</field>
 			<field name="arch" type="xml">
 				<form string="Formulario para Distritos">
 					<sheet>
@@ -45,31 +46,32 @@
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="provincia_tree_view">
-			<field name="name">provincia.tree</field>
-			<field name="model">clientes.provincia</field>
+		<record model="ir.ui.view" id="province_tree_view">
+			<field name="name">province.tree</field>
+			<field name="model">customers.province</field>
 			<field name="arch" type="xml">
 				<tree string="Lista de Provincias">
 					<field name="name"/>
-                    <field name="canton_id"/>
+                    <field name="cantons_ids"/>
 				</tree>
 			</field>
 		</record>
 
 		<record model="ir.ui.view" id="canton_tree_view">
 			<field name="name">canton.tree</field>
-			<field name="model">clientes.canton</field>
+			<field name="model">customers.canton</field>
 			<field name="arch" type="xml">
 				<tree string="Lista de Cantones">
 					<field name="name"/>
-					<field name="provincia_id"/>
+					<field name="province_id"/>
+					<field name="districts_ids"/>
 				</tree>
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="distrito_tree_view">
-			<field name="name">distrito.tree</field>
-			<field name="model">clientes.distrito</field>
+		<record model="ir.ui.view" id="district_tree_view">
+			<field name="name">district.tree</field>
+			<field name="model">customers.district</field>
 			<field name="arch" type="xml">
 				<tree string="Lista de Distritos">
 					<field name="name"/>
@@ -78,9 +80,9 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="provincia_list_action">
+		<record model="ir.actions.act_window" id="province_list_action">
 			<field name="name">Lista De Provincias</field>
-			<field name="res_model">clientes.provincia</field>
+			<field name="res_model">customers.province</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="help" type="html">
@@ -90,7 +92,7 @@
 
 		<record model="ir.actions.act_window" id="canton_list_action">
 			<field name="name">Lista De Cantones</field>
-			<field name="res_model">clientes.canton</field>
+			<field name="res_model">customers.canton</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="help" type="html">
@@ -98,9 +100,9 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="distrito_list_action">
+		<record model="ir.actions.act_window" id="district_list_action">
 			<field name="name">Lista De Distritos</field>
-			<field name="res_model">clientes.distrito</field>
+			<field name="res_model">customers.district</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="help" type="html">
@@ -108,9 +110,9 @@
 			</field>
 		</record>
 
-		<menuitem id="submenu_clientes_lugares" parent="clientes_menu_principal" name="LUGARES"/>
-		<menuitem id="submenu_provincias" name="Provincias" parent="submenu_clientes_lugares" action="provincia_list_action"/>
-		<menuitem id="submenu_cantones" name="Cantones" parent="submenu_clientes_lugares" action="canton_list_action"/>
-		<menuitem id="submenu_distritos" name="Distritos" parent="submenu_clientes_lugares" action="distrito_list_action"/>
+		<menuitem id="submenu_customers_places" parent="customers_main_menu" name="LUGARES"/>
+		<menuitem id="submenu_provinces" name="Provincias" parent="submenu_customers_places" action="province_list_action"/>
+		<menuitem id="submenu_cantons" name="Cantones" parent="submenu_customers_places" action="canton_list_action"/>
+		<menuitem id="submenu_districts" name="Distritos" parent="submenu_customers_places" action="district_list_action"/>
 	</data>
 </openerp>
