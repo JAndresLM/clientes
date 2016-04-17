@@ -9,15 +9,31 @@ class Province(models.Model):
     name = fields.Char(string="Provincia", required=True)
     canton_id = fields.One2many('customers.canton', 'province_id')
 
+    _sql_constraints = [
+        ('name_unique',
+            'UNIQUE(name)',
+            "No se admiten nombres repetidos en provincias"),
+    ]
 
 class Canton(models.Model):
     _name = 'customers.canton'
-    name = fields.Char(string="Canton", required=True)
+    name = fields.Char(string="Cantón", required=True)
     province_id = fields.Many2one('customers.province', ondelete='cascade', string="Provincia", required=True)
     district_id = fields.One2many('customers.district', 'canton_id')
 
+    _sql_constraints = [
+        ('name_unique',
+            'UNIQUE(name)',
+            "No se admiten nombres repetidos en cantones"),
+    ]
 
 class District(models.Model):
     _name = 'customers.district'
     name = fields.Char(string="Distrito", required=True)
     canton_id = fields.Many2one('customers.canton', ondelete='cascade', string="Canton", required=True)
+
+    _sql_constraints = [
+        ('name_unique',
+            'UNIQUE(name)',
+            "No se admiten nombres repetidos en distritos"),
+    ]

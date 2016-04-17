@@ -11,17 +11,21 @@
 								<field name="name"/>
 								<field name="company"/>
 								<field name="active"/>
-								<field name="email"/>
 								<field name="phone_ids">
-									<tree string="Teléfonos" editable="top">
+									<tree string="Teléfonos" editable="bottom">
+										<field name="name"/>
+									</tree>
+								</field>
+								<field name="email_ids">
+									<tree string="Correos Electrónicos" editable="bottom">
 										<field name="name"/>
 									</tree>
 								</field>
 							</group>
 							<group string="Ubicación">
-								<field name="province" widget="selection"/>
-								<field name="canton" widget="selection" />
-								<field name="district" widget="selection"/>
+								<field name="province"/>
+								<field name="canton" />
+								<field name="district"/>
 								<field name="address"/>
 							</group>
 						</group>
@@ -38,7 +42,7 @@
 				<tree string="Lista de Clientes">
 					<field name="name"/>
 					<field name="phone_ids"/>
-					<field name="email"/>
+					<field name="email_ids"/>
 				</tree>
 			</field>
 		</record>
@@ -53,7 +57,7 @@
 			</field>
 		</record>
 
-		<menuitem id="customers_main_menu" name="GESTIÓN DEL CLIENTES"/>
+		<menuitem id="customers_main_menu" name=" GESTIÓN DE CLIENTES" sequence="10"/>
 		<menuitem id="submenu_customers_general" parent="customers_main_menu" name="GENERAL"/>
 		<menuitem id="submenu_customers" name="Clientes" parent="submenu_customers_general" action="customers_list_action"/>
 	</data>
