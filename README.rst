@@ -11,8 +11,8 @@ Este módulo le permite administrar:
     	* Nombre completo
     	* Empresa
     	* Contacto [teléfonos y correo electrónico]
-    	* dirección exacta
-    	* etc.
+    	* Dirección exacta
+    	* Etc.
 
 
 Instalación

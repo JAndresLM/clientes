@@ -42,10 +42,32 @@ class Phone(models.Model):
     name = fields.Char(string="Teléfono", required=True)
     customer_id = fields.Many2one('customers.customer', ondelete='cascade', string="Propietario", required=True)
 
+    @api.multi
+    def _validate_phone(self):
+        for x in self:
+            if re.match("^[0-9]{4}-[0-9]{4}$", self.name) == None:
+                return False
+        return True
+
+    _constraints = [
+        (_validate_phone, '\n\nPor favor ingrese un teléfono válido. \nFormato correcto: 9999-9999', ['name']),
+    ]
+
 class Email(models.Model):
     _name = 'customers.email'
     name = fields.Char(string="Correo Electrónico", required=True)
     customer_id = fields.Many2one('customers.customer', ondelete='cascade', string="Propietario", required=True)
+
+    @api.multi
+    def _validate_email(self):
+        for x in self:
+            if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", self.name) == None:
+                return False
+        return True
+
+    _constraints = [
+        (_validate_email, '\n \n Por favor ingrese un correo válido. \nFormato correcto: usuario@dominio.com', ['name']),
+    ]
 
 class Company(models.Model):
     _name = 'customers.company'
