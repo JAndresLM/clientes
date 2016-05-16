@@ -44,6 +44,8 @@
 					<field name="university"/>
 					<field name="campus"/>
 					<field name="school"/>
+					<field name="coordinator"/>
+					<field name="title"/>
 				</xpath>
 			</field>
 		</record>

@@ -78,5 +78,7 @@ class Laboratory(models.Model):
     university = fields.Char("Universidad")
     school=fields.Char("Escuela")
     campus=fields.Char("Sede")
+    coordinator=fields.Char("Coordinador del laboratorio")
+    title=fields.Char("Descripción del coordinador")
 
 
