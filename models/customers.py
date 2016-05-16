@@ -73,4 +73,10 @@ class Company(models.Model):
     _name = 'customers.company'
     name = fields.Char(string="Empresa", required=True)
 
+class Laboratory(models.Model):
+    _inherit = 'res.company'
+    university = fields.Char("Universidad")
+    school=fields.Char("Escuela")
+    campus=fields.Char("Sede")
+
 
