@@ -10,7 +10,7 @@ class Customer(models.Model):
     name = fields.Char(string="Nombre Completo", required=True)
     company = fields.Many2one('customers.company', ondelete='cascade',string="Empresa")
     phone_ids = fields.One2many('customers.phone', 'customer_id', string="Teléfono")
-    email_ids = fields.One2many('customers.email', 'customer_id', string="Coreo Electrónico")
+    email_ids = fields.One2many('customers.email', 'customer_id', string="Correo Electrónico")
     active = fields.Boolean(default=True, string="Activo")
     province = fields.Many2one('customers.province', ondelete='cascade', string="Provincia")
     canton = fields.Many2one('customers.canton', ondelete='cascade', string="Cantón")
