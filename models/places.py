@@ -31,9 +31,3 @@ class District(models.Model):
     _name = 'customers.district'
     name = fields.Char(string="Distrito", required=True)
     canton_id = fields.Many2one('customers.canton', ondelete='cascade', string="Canton", required=True)
-
-    _sql_constraints = [
-        ('name_unique',
-            'UNIQUE(name)',
-            "No se admiten nombres repetidos en distritos"),
-    ]
