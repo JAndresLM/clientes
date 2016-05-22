@@ -8,6 +8,7 @@ import re
 class Customer(models.Model):
     _name = 'customers.customer'
     name = fields.Char(string="Nombre Completo", required=True)
+    idcard=fields.Char(string="Cédula")
     company = fields.Many2one('customers.company', ondelete='cascade',string="Empresa")
     phone_ids = fields.One2many('customers.phone', 'customer_id', string="Teléfono")
     email_ids = fields.One2many('customers.email', 'customer_id', string="Correo Electrónico")

@@ -8,6 +8,7 @@
 					<sheet>
 						<group>
 							<group string="Información">
+								<field name="idcard"/>
 								<field name="name"/>
 								<field name="company"/>
 								<field name="active"/>
